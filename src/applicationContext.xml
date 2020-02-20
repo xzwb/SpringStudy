@@ -5,4 +5,7 @@
     <bean id="userService" class="service.impl.UserServiceImpl" />
 
     <bean id="userServiceByStaticFactory" class="factor.UserServiceFactory" factory-method="getUserService"/>
+
+    <bean id = "userServiceFactory" class="factor.UserServiceFactoryNotStatic"/>
+    <bean id = "userServiceByFactory" factory-bean="userServiceFactory" factory-method="getUserService" />
 </beans>

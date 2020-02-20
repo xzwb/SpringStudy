@@ -18,5 +18,11 @@ public class IocTest {
         userService.add();
     }
 
+    @Test
+    public void FactoryTest() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = (UserService) applicationContext.getBean("userServiceByFactory");
+        userService.add();
+    }
 
 }
