@@ -6,5 +6,5 @@ import org.springframework.context.annotation.Configuration;
 
 @ComponentScan
 @Configuration
-public class CDPlayer {
+public class CDPlayerConfig {
 }
