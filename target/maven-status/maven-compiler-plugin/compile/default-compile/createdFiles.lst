@@ -1,0 +1,9 @@
+cc/xzwb/App.class
+factor/UserServiceFactoryNotStatic.class
+service/impl/UserServiceImpl.class
+cc/xzwb/cd/CDPlayerTest.class
+factor/UserServiceFactory.class
+cc/xzwb/cd/CompactDisc.class
+cc/xzwb/cd/impl/CompactDiscImpl.class
+cc/xzwb/cd/CDPlayerConfig.class
+service/UserService.class

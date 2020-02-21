@@ -25,4 +25,11 @@ public class IocTest {
         userService.add();
     }
 
+    @Test
+    public void scopeTest() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService1 = (UserService) applicationContext.getBean("userService");
+        UserService userService2 = (UserService) applicationContext.getBean("userService");
+        System.out.println(userService1 == userService2);
+    }
 }
