@@ -7,7 +7,7 @@ public class DITest {
     @Test
     public void diTest() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        MyService myService = (MyService) applicationContext.getBean("myService");
+        MyService myService = (MyService) applicationContext.getBean("myServiceImpl");
         myService.add();
     }
 }
