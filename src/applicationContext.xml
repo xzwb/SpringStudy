@@ -8,4 +8,16 @@
 
     <bean id = "userServiceFactory" class="factor.UserServiceFactoryNotStatic"/>
     <bean id = "userServiceByFactory" factory-bean="userServiceFactory" factory-method="getUserService" />
+
+    <!-- 自动装配
+    autowire="constructor" : 通过构造方法
+    autowire="byType": 通过setter方法
+    -->
+    <bean id = "myService" class="di.service.impl.MyServiceImpl" >
+<!--        通过setter方法注入 -->
+<!--        <property name="myDao" ref="myDao"/>-->
+<!--        通过构造方法注入-->
+<!--        <constructor-arg name="myDao" ref="myDao" />-->
+    </bean>
+    <bean id = "myDao" class="di.dao.impl.MyDaoImpl" />
 </beans>
