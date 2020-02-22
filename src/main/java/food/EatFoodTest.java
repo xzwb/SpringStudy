@@ -18,8 +18,14 @@ public class EatFoodTest {
     @Sweet
     EatFood eatFood;
 
+    @Autowired
+    @Cold
+    @Sweet
+    EatFood eatFood2;
+
     @Test
     public void eat() {
         eatFood.eat();
+        System.out.println(eatFood == eatFood2);
     }
 }
