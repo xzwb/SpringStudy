@@ -1,4 +1,5 @@
 package diForRun;
 
-public class Food {
+public interface Food {
+    void eat();
 }
