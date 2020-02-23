@@ -6,6 +6,7 @@
 <!--  开启注解模式  -->
 <!--    <context:annotation-config />-->
 <!--    开启扫描 -->
+    <context:property-placeholder location="classpath:apple.properties"/>
     <context:component-scan base-package="di"/>
     <bean id="userService" class="service.impl.UserServiceImpl" scope="prototype"/>
 
