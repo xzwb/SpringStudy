@@ -7,8 +7,18 @@
 <!--  开启注解模式  -->
 <!--    <context:annotation-config />-->
 <!--    开启扫描 -->
-    <aop:aspectj-autoproxy/>
     <context:component-scan base-package="di"/>
+    <bean id="audience" class="aopUseXml.Audience" />
+    <bean id = "performanceImpl" class="aopUseXml.impl.PerformanceImpl"/>
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:before method="silencePhone" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+            <aop:before method="takeSeat" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+            <aop:after-returning method="sayThank" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+            <aop:after-throwing method="saySorry" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+        </aop:aspect>
+    </aop:config>
     <bean id="userService" class="service.impl.UserServiceImpl" scope="prototype"/>
 
     <bean id="userServiceByStaticFactory" class="factor.UserServiceFactory" factory-method="getUserService"/>
