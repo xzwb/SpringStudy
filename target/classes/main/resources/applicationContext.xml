@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--  开启注解模式  -->
+<!--    <context:annotation-config />-->
+<!--    开启扫描 -->
+    <context:component-scan base-package="di"/>
+    <bean id="audience" class="aopUseXml.Audience" />
+    <bean id = "performanceImpl" class="aopUseXml.impl.PerformanceImpl"/>
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:before method="silencePhone" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+            <aop:before method="takeSeat" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+            <aop:after-returning method="sayThank" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+            <aop:after-throwing method="saySorry" pointcut="execution(* aopUseXml.Performance.perform(..))"/>
+        </aop:aspect>
+    </aop:config>
+    <bean id="userService" class="service.impl.UserServiceImpl" scope="prototype"/>
+
+    <bean id="userServiceByStaticFactory" class="factor.UserServiceFactory" factory-method="getUserService"/>
+
+    <bean id = "userServiceFactory" class="factor.UserServiceFactoryNotStatic"/>
+    <bean id = "userServiceByFactory" factory-bean="userServiceFactory" factory-method="getUserService" />
+
+    <!-- 自动装配
+    autowire="constructor" : 通过构造方法
+    autowire="byType": 通过setter方法
+    -->
+<!--    <bean id = "myService" class="di.service.impl.MyServiceImpl" >-->
+<!--        通过setter方法注入 -->
+<!--        <property name="myDao" ref="myDao"/>-->
+<!--        通过构造方法注入-->
+<!--        <constructor-arg name="myDao" ref="myDao" />-->
+<!--    </bean>-->
+<!--    <bean id = "myDao" class="di.dao.impl.MyDaoImpl" />-->
+
+</beans>
