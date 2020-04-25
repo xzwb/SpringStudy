@@ -5,13 +5,13 @@
 
     <bean id="beanPostProcessor" class="javaee.BeanPostProcessorImpl"/>
 
-    <bean id="source" class="javaee.Source">
+    <bean id="source" class="javaee.Source" lazy-init="true">
         <property name="fruit" value="橙汁"/>
         <property name="size" value="大杯"/>
         <property name="sugar" value="少糖"/>
     </bean>
 
-    <bean id="juiceMaker" class="javaee.JuiceMaker" init-method="init" destroy-method="myDestroy">
+    <bean id="juiceMaker" class="javaee.JuiceMaker" init-method="init" destroy-method="myDestroy" lazy-init="true">
         <property name="beverageShop" value="xzwb"/>
         <property name="source" ref="source"/>
     </bean>
