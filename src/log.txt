@@ -1,0 +1,11 @@
+2020-05-04 11:04:33,905 DEBUG [main] (AbstractApplicationContext.java:595) - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2df32bf7
+2020-05-04 11:04:34,112 DEBUG [main] (XmlBeanDefinitionReader.java:396) - Loaded 5 bean definitions from class path resource [redis.xml]
+2020-05-04 11:04:34,147 DEBUG [main] (DefaultSingletonBeanRegistry.java:213) - Creating shared instance of singleton bean 'poolConfig'
+2020-05-04 11:04:34,199 DEBUG [main] (DefaultSingletonBeanRegistry.java:213) - Creating shared instance of singleton bean 'connectionFactory'
+2020-05-04 11:04:34,338 DEBUG [main] (DefaultSingletonBeanRegistry.java:213) - Creating shared instance of singleton bean 'jdkSerializationRedisSerializer'
+2020-05-04 11:04:34,341 DEBUG [main] (DefaultSingletonBeanRegistry.java:213) - Creating shared instance of singleton bean 'stringRedisSerializer'
+2020-05-04 11:04:34,341 DEBUG [main] (DefaultSingletonBeanRegistry.java:213) - Creating shared instance of singleton bean 'redisTemplate'
+2020-05-04 11:04:34,486 DEBUG [main] (RedisConnectionUtils.java:129) - Opening RedisConnection
+2020-05-04 11:04:34,526 DEBUG [main] (RedisConnectionUtils.java:242) - Closing Redis Connection.
+2020-05-04 11:04:34,526 DEBUG [main] (RedisConnectionUtils.java:129) - Opening RedisConnection
+2020-05-04 11:04:34,529 DEBUG [main] (RedisConnectionUtils.java:242) - Closing Redis Connection.
